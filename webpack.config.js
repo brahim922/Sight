@@ -13,7 +13,7 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
-
+   
     /*
      * ENTRY CONFIG
      *
@@ -21,7 +21,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-
+   
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
@@ -71,6 +71,10 @@ Encore
     .enableStimulusBridge(
         './assets/controllers.json'
       )
+      .copyFiles({
+        from: './assets/img',
+        to: 'img/[path][name].[ext]',
+    });
 ;
 
 module.exports = Encore.getWebpackConfig();

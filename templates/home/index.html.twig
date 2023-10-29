@@ -3,40 +3,117 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block navbar-klean" data-navbar-on-scroll>
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="{{ asset('build/img/gallery/logo.png') }}" alt="" class="me-3 d-inline-block">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <div id="navbarSupportedContent" class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0">
+      <ul class="navbar-nav me-auto pt-2 pt-lg-0 font-base">
+        <li class="nav-item px-2" data-anchor>
+          <a class="nav-link fw-medium" aria-current="page" href="#home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item px-2" data-anchor>
+          <a class="nav-link" href="#service">Service</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+        <li class="nav-item px-2" data-anchor>
+          <a class="nav-link" href="#feature">Features</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        <li class="nav-item px-2" data-anchor>
+          <a class="nav-link" href="#testimonial">Testimonial</a>
+        </li>
+        <li class="nav-item px-2" data-anchor>
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="ps-lg-5">
+        <button class="btn btn-link text-primary fw-bold order-1 order-lg-0" type="button">Sign in</button>
+        <button class="btn btn-light shadow-klean order-0" type="submit">
+          <span class="text-gradient fw-bold">Sign Up</span>
+        </button>
       </form>
     </div>
   </div>
 </nav>
+
+
+
+<section id="home">
+  <div class="d-none d-md-block bg-size"  style="background-image: url('{{ asset('build/img/illustrations/hero.png') }}'); background-position: center; background-size: contain;"
+ background-position: right bottom;"></div>
+  <div style="background-image: url('build/img/illustrations/heroheader-bg.png'); background-position: center; background-size: contain;"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
+        <h1 class="fw-bold display-4 fs-4 fs-lg-6 fs-xxl-7 text-gradient">Bootstrap 5 theme</h1>
+        <h1 class="text-700">crafted by <span class="fw-bold">ThemeWagon</span></h1>
+        <p class="mb-5 fs-0">ThemeWagon offers a wide array of category-oriented
+          <br class="d-none d-lg-block">Free and Premium Bootstrap HTML Templates and Themes.</p>
+        <a href="#" class="btn hover-top btn-glow btn-klean">Check Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <div class="container container-md-fluid" id="blog">
+        <div class="row">
+            <div class="col-lg-7 col-xxl-5 mx-auto text-center mb-6">
+                <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Blog post</h5>
+                <p class="mb-0">Blogs are a great method to increase traffic and generate leads. Make a profit. Get compensated for your efforts.</p>
+            </div>
+        </div>
+        <div class="row flex-center h-100 circle-blend circle-blend-left circle-primary">
+            <div class="col-12">
+                <div class="row align-items-center circle-blend circle-blend-right circle-warning">
+                    <!-- Utilisation de boucle "each" pour générer les cartes de blog -->
+                    <!-- Assurez-vous que la variable "blogs" est disponible dans votre modèle -->
+                    <!-- Remarquez également l'utilisation de variables dans les attributs -->
+                    <!-- des balises pour afficher les données dynamiquement -->
+                    <!-- Vous devrez également inclure les icônes SVG correspondantes -->
+                    <!-- avec les classes et attributs nécessaires -->
+                    <div class="col-md-6 col-lg-4 mb-4 circle-blend circle-blend-left circle-pink">
+                        <div class="card card-bg p-3 h-100">
+                            <div class="card-body">
+                                <h6 class="text-gradient fs--1 fw-bold">Article</h6>
+                                <hr class="text-100">
+                                <h5 class="fw-bold lh-base fs-1 text-700">How do you use social media for growing traffic and sales?</h5>
+                                <div class="d-flex align-items-center">
+                                <img src="{{ asset('build/img/gallery/author-1.png') }}"
+                                     alt="blog" class="me-3 me-md-3">
+                                    <div class="my-3 fs--1">
+                                        <p class="mb-0 fw-bold">Jessica Parker</p>
+                                        <p class="fw-normal mb-0">May, 2020<span class="min">5 mins read</span></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mt-4 fs--1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#C381DB" class="bi bi-hand-thumbs-up me-2">
+                                        <!-- Ajoutez ici le chemin du glyphique SVG pour le pouce vers le haut -->
+                                    </svg>
+                                    <span class="me-4">34</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#C381DB" class="bi bi-eye me-2">
+                                        <!-- Ajoutez ici le chemin du glyphique SVG pour l'œil -->
+                                    </svg>
+                                    <span>203</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Répétez la structure ci-dessus pour les autres éléments de "blogs" -->
+                </div>
+                <div class="col-auto mx-auto my-5">
+                    <button class="btn btn-lg btn-klean-outline order-0 fs-0" type="submit">
+                        <span class="text-gradient fw-bold">View all</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock %}
